@@ -1,0 +1,29 @@
+.container-fluid {
+  padding: 0px;
+}
+
+.App {
+  text-align: center;
+  background-color: #f7f7fa;
+  min-height: 100vh;
+
+  padding: 0px 125px 0px 125px;
+}
+
+.App .row {
+  margin: 0px;
+}
+
+.navbar-row {
+  margin: 0px;
+}
+
+.navbar-container {
+  padding: 0px;
+}
+
+@media (max-width: 1350px) {
+  .App {
+    padding: 0px;
+  }
+}

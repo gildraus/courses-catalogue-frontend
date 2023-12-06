@@ -304,6 +304,10 @@
     width: 100% !important;
   }
 
+  .reset-filter-text {
+    display: none;
+  }
+
   /* .courses-view-card-right {
     color: red;
   } */

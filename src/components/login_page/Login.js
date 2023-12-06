@@ -4,6 +4,8 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
+const server_name = "https://course-catalogue-backend.vercel.app";
+
 const Login = () => {
   const navigate = useNavigate();
 

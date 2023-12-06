@@ -5,6 +5,8 @@ import Footer from "../../components/main_page/Footer";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 
+const server_name = "https://course-catalogue-backend.vercel.app";
+
 const UpdatePage = ({ allCourses, allModules, allDepartments }) => {
   const [course, setCourse] = useState(undefined);
 

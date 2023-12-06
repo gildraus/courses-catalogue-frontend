@@ -59,7 +59,7 @@ const UpdatePage = ({ allCourses, allModules, allDepartments }) => {
       try {
         if (id) {
           const response = await axios.get(
-            `http://localhost:3001/api/courses/${id}`
+            `${server_name}/api/courses/${id}`
           );
           setCourse(response.data);
           setCourseID(response.data.course_id);

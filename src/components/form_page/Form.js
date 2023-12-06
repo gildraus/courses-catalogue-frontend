@@ -227,7 +227,7 @@ const Form = ({ allModules, allDepartments }) => {
   const submitForm = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/courses",
+        `${server_name}/api/courses`,
         {
           courseID: courseID,
           acc: accreditation,

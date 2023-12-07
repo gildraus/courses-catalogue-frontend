@@ -14,7 +14,7 @@
   background-size: 100% 250px;
 }
 
-.course-details-header {
+/*.course-details-header {
   margin-bottom: 25px;
 }
 
@@ -48,6 +48,7 @@
 .course-details-sidebar {
   width: 40%;
   padding-left: 15px;
+  height: fit-content;
 }
 
 .course-details-video-box {
@@ -75,7 +76,7 @@
 }
 
 .footer {
-  background: transparent; /* Fully transparent background */
+  background: transparent;
   text-align: center;
   padding: 20px;
   width: 100%;
@@ -96,4 +97,28 @@
 
 img {
   min-width: 18px;
+}*/
+
+.course-details-header {
+  padding: 35px 0px 15px 0px;
+  text-align: left;
+}
+
+.course-details-video-box {
+  margin-top: 25px;
+}
+
+.course-details-video-box iframe {
+  border-radius: 10px;
+}
+
+.course-details-basic-info-box,
+.course-details-sidecard,
+.course-details-detailed-info-box,
+.course-details-literature {
+  background-color: #ffffff;
+  border-radius: 10px;
+  text-align: left;
+  padding: 30px 25px 30px 25px;
+  margin-top: 25px;
 }

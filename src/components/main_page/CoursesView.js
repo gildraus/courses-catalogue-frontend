@@ -162,6 +162,16 @@ const CoursesView = ({
               </h4>
               <div id="acc-radio-group">
                 <div>
+                  <input
+                    type="radio"
+                    value="2020"
+                    name="acc"
+                    checked={selectedAccreditation === "2020"}
+                    onChange={handleAccreditationChange}
+                  />{" "}
+                  Акредитација 2020
+                </div>
+                <div>
                   {" "}
                   <input
                     type="radio"
@@ -171,16 +181,6 @@ const CoursesView = ({
                     onChange={handleAccreditationChange}
                   />{" "}
                   Акредитација 2014
-                </div>
-                <div>
-                  <input
-                    type="radio"
-                    value="2020"
-                    name="acc"
-                    checked={selectedAccreditation === "2020"}
-                    onChange={handleAccreditationChange}
-                  />{" "}
-                  Акредитација 2020
                 </div>
               </div>
             </div>
@@ -659,7 +659,6 @@ const CoursesView = ({
                   Четврта
                 </div>
               </div>
-
             </div>
 
             {/* Катедра*/}

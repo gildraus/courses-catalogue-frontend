@@ -8,7 +8,6 @@ import CourseDetails from "./components/main_page/CourseDetails";
 import Login from "./components/login_page/Login";
 import Form from "./components/form_page/Form";
 import Dashboard from "./components/cpanel_page/Dashboard";
-import Test from "./components/main_page/Test";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -22,6 +21,7 @@ function App() {
   const [allCourses, setAllCourses] = useState([]);
   const [allDepartments, setAllDepartments] = useState([]);
   const [allModules, setAllModules] = useState([]);
+  const [allLevelsOfStudy, setAllLevelsOfStudy] = useState([]);
   const [coursesToShow, setCoursesToShow] = useState([]);
   const [selectedAccreditation, setSelectedAccreditation] = useState([]);
   const [selectedLevelOfStudy, setSelectedLevelOfStudy] = useState([]);
@@ -36,7 +36,7 @@ function App() {
   const [emptyResponse, setEmptyResponse] = useState(false);
   const cookies = useCookies(["access_token"])[0];
 
-  const server_name = "https://course-catalogue-backend.vercel.app";//"http://localhost:3001";
+  const server_name = "https://course-catalogue-backend.vercel.app"; //"http://localhost:3001";
 
   const fetchCourses = async () => {
     try {
@@ -65,22 +65,28 @@ function App() {
     }
   };
 
+  const fetchLevelsOfStudy = async () => {
+    try {
+      const response = await axios.get(server_name + "/levelsofstudy");
+      setAllLevelsOfStudy(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const fetchFilteredCourses = async () => {
     try {
-      const response = await axios.get(
-        server_name + "/filteredCourses",
-        {
-          params: {
-            selectedAccreditation,
-            selectedLevelOfStudy,
-            selectedStudies,
-            selectedModule,
-            selectedSemester,
-            selectedYearOfStudy,
-            selectedDepartments,
-          },
-        }
-      );
+      const response = await axios.get(server_name + "/filteredCourses", {
+        params: {
+          selectedAccreditation,
+          selectedLevelOfStudy,
+          selectedStudies,
+          selectedModule,
+          selectedSemester,
+          selectedYearOfStudy,
+          selectedDepartments,
+        },
+      });
       if (response.data.length === 0) {
         setEmptyResponse(true);
       } else {
@@ -109,7 +115,12 @@ function App() {
     fetchCourses();
     fetchDepartments();
     fetchModules();
+    fetchLevelsOfStudy();
   }, []);
+
+  const test = () => {
+    console.log(allLevelsOfStudy);
+  };
 
   return (
     <BrowserRouter>
@@ -121,6 +132,7 @@ function App() {
               <div className="row navbar-row">
                 <div className="navbar-container col-sm-12">
                   <Navbar />
+                  <button onClick={test}>test</button>
                 </div>
               </div>
 
